@@ -3,3 +3,4 @@ ChangeLog
 @build 141211-01
 - dodano komentarze opisujące parametry funkcji,
 - poprawiono funkcje odpowiedzialne za dodawanie zer (teraz dodaje zera na podstawie parametru z serwera)
+- dodano niezdefiniowaną funkcję odpowiedzialną za nasłuchiwanie od serwera
