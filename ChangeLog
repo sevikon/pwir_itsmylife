@@ -2,5 +2,6 @@ ChangeLog
 
 @build 141211-01 @Mateusz Ścirka
 - dodano komentarze opisujące parametry funkcji,
-- poprawiono funkcje odpowiedzialne za dodawanie zer (teraz dodaje zera na podstawie parametru z serwera)
+- poprawiono funkcje odpowiedzialne za dodawanie zer. Tteraz dodaje zera na podstawie parametru z serwera:
+	{left}, {right}, {top}, {bottom}, {topleft}, {topright}, {bottomleft}, {bottomright}, {around}
 - dodano niezdefiniowaną funkcję odpowiedzialną za nasłuchiwanie od serwera
