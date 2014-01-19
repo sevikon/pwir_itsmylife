@@ -8,3 +8,6 @@ ChangeLog
 
 @build 140119-01 @Małgorzata Maciurzyńska
 - dodano funkcje divideArray, która ma za zadanie podzielić główną listę na mniejsze
+
+@build 140119-02 @Małgorzata Maciurzyńska
+- zmiana funkcji divideArray
