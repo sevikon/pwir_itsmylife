@@ -1,5 +1,5 @@
 -module(life).
--export([saveArray/3, saveRandomArray/2, read/1, getRow/2, genRandomArray/1, start/0]).
+-export([saveArray/3, saveRandomArray/2, read/1, getRow/2, genRandomArray/1, start/0, divideArrayCheck/0]).
         
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Wywolania
@@ -271,3 +271,33 @@ writeData(FD,Data) ->
 genRandomArray(Size)->
         Len = trunc(math:pow(2,Size)),
         genRandomArray(Len,Len,[]).
+
+genRandomArray(0,_Len,Array) -> Array;
+genRandomArray(Count,Len,Array) ->
+    Row = [random:uniform(2)-1 || _ <- lists:seq(0, Len-1)],
+    genRandomArray(Count-1,Len,Array++[Row]).
+	
+%@params Lista, Liczba aktywnych nodów
+divideArray(List, ActiveNodes) -> 
+	MinCols = trunc(math:sqrt(length(List)) / ActiveNodes),
+	Length = trunc(length(List) / ActiveNodes),
+	if 
+		MinCols >= 2 -> divide(List,  [ [{left_top_right}] ++ [lists:sublist(List, 1, Length*2)]] , ActiveNodes, 1, Length);
+		true -> List
+	end.
+
+%@params Lista, Nowa lista, Liczba aktywnych nodów, Obecna iteracja, Ilosc znakow pobieranych 
+divide(_List, NewList, ActiveNodes, CurrentPart, _Length) when ActiveNodes == CurrentPart ->
+	NewList;
+
+divide(List, NewList, ActiveNodes, CurrentPart, Length) when ActiveNodes == CurrentPart + 1 ->
+	divide(List, NewList ++ [ [{left_bottom_right}] ++ [lists:sublist(List, (CurrentPart * Length + 1)-Length, Length*2)]], ActiveNodes, CurrentPart + 1, Length);
+	
+divide(List, NewList, ActiveNodes, CurrentPart, Length) ->
+	divide(List, NewList ++ [ [{left_right}] ++ [lists:sublist(List, (CurrentPart * Length + 1)-Length, Length*3)]], ActiveNodes, CurrentPart + 1, Length).
+	
+%funkcja pomocnicza do wywolania funkcji divideArray	
+divideArrayCheck() ->
+	List =[1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,0,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+	ActiveNodes = 3,
+	divideArray(List, ActiveNodes).		

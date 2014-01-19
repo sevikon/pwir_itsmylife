@@ -5,3 +5,6 @@ ChangeLog
 - poprawiono funkcje odpowiedzialne za dodawanie zer. Tteraz dodaje zera na podstawie parametru z serwera:
 	{left}, {right}, {top}, {bottom}, {topleft}, {topright}, {bottomleft}, {bottomright}, {around}
 - dodano niezdefiniowaną funkcję odpowiedzialną za nasłuchiwanie od serwera
+
+@build 141212-01 @Małgorzata Maciurzyńska
+- dodano funkcje divideArray, która ma za zadanie podzielić główną listę na mniejsze
