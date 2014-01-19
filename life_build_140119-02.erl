@@ -299,7 +299,7 @@ divide(List, NewList, ActiveNodes, CurrentPart, Length, Size, NumOfRows, Rest) w
 	divide(List, NewList ++ [ [{left_bottom_right}] ++ [lists:sublist(List, (CurrentPart * Length+1)-Size, (NumOfRows*Size)+Size+Rest*Size)]], ActiveNodes, CurrentPart + 1, Length, Size, NumOfRows, Rest);
 	
 divide(List, NewList, ActiveNodes, CurrentPart, Length, Size, NumOfRows, Rest) ->
-	divide(List, NewList ++ [ [{left_right}] ++ [lists:sublist(List, (CurrentPart * Length+1), (NumOfRows*Size)+2*Size)]], ActiveNodes, CurrentPart + 1, Length, Size, NumOfRows, Rest).
+	divide(List, NewList ++ [ [{left_right}] ++ [lists:sublist(List, (CurrentPart * Length+1)-Size, (NumOfRows*Size)+2*Size)]], ActiveNodes, CurrentPart + 1, Length, Size, NumOfRows, Rest).
 	
 
 %funkcja pomocnicza do wywolania funkcji divideArray	
