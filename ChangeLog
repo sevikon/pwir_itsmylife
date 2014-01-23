@@ -11,3 +11,8 @@ ChangeLog
 
 @build 140119-02 @Małgorzata Maciurzyńska
 - zmiana funkcji divideArray
+
+@build 140123-01 @Konrad Seweryn (sevikon) + @Mateusz Ścirka
+- dodana komunikacja + zmiana funkcji odpowiedzialnej za dzielenie
+- usuniecie zbednych funkcji oraz poprawienie komentarzy
+- wersja dzialajaca - 5 iteracji; tablica 2^10; okolo 55s
