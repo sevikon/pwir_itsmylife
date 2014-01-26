@@ -16,3 +16,8 @@ ChangeLog
 - dodana komunikacja + zmiana funkcji odpowiedzialnej za dzielenie
 - usuniecie zbednych funkcji oraz poprawienie komentarzy
 - wersja dzialajaca - 5 iteracji; tablica 2^10; okolo 55s
+
+@build 140126-01 @Mateusz Ścirka
+- poprawiono algorytm dzielenia tablicy
+- poprawiono wydajność algorytmu gry w życie
+	%test: life:start()
