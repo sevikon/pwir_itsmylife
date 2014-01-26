@@ -21,3 +21,6 @@ ChangeLog
 - poprawiono algorytm dzielenia tablicy
 - poprawiono wydajność algorytmu gry w życie
 	%test: life:start()
+	
+@build 140126-02 @Mateusz Ścirka
+- dodano wstępny timer
